@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.indiev.sc.tpa.mapper.SongBaseMapper">
+<mapper namespace="com.indiev.sc.tpa.business.mapper.SongBaseMapper">
     <sql id="select_column">
     ta.id
     ,ta.song_id as songId
@@ -10,7 +10,7 @@
     ,ta.file_type as fileType
     </sql>
     <!--系统用户查询结果集-->
-    <resultMap id="songBaseResultMap" type="com.indiev.sc.tpa.domain.SongBasePojo">
+    <resultMap id="songBaseResultMap" type="com.indiev.sc.tpa.domain.pojo.SongBasePojo">
         <result property="id" column="id"/>
         <result property="songId" column="songId"/>
         <result property="songName" column="songName"/>

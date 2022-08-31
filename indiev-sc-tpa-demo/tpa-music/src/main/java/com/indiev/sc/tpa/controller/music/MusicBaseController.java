@@ -1,9 +1,9 @@
 package com.indiev.sc.tpa.controller.music;
 
 import com.indiev.sc.common.result.Result;
+import com.indiev.sc.tpa.business.service.MusicBaseService;
 import com.indiev.sc.tpa.controller.BaseController;
-import com.indiev.sc.tpa.domain.SongBasePojo;
-import com.indiev.sc.tpa.service.MusicBaseService;
+import com.indiev.sc.tpa.domain.pojo.SongBasePojo;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -1,4 +1,4 @@
-package com.indiev.sc.tpa.domain;
+package com.indiev.sc.tpa.domain.pojo;
 
 import lombok.Data;
 

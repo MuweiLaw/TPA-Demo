@@ -1,8 +1,8 @@
-package com.indiev.sc.tpa.mapper;
+package com.indiev.sc.tpa.business.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.indiev.sc.tpa.domain.SongBasePojo;
+import com.indiev.sc.tpa.domain.pojo.SongBasePojo;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
