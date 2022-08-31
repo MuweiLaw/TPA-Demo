@@ -1,12 +1,12 @@
-# auth_web
+# TPA_Demo
 
-> 鉴权前端服务
+> 3rd party application demo
 
 ## Build Setup
 
 ``` bash
 # install dependencies
-npm install
+cnpm install
 
 # serve with hot reload at localhost:8080
 npm run dev

@@ -31,8 +31,7 @@
         </el-slider>
         <div class="controlBox">
           <i @click="move(-5)" class="el-icon-d-arrow-left"></i>
-          <i
-            type="primary"
+          <i type="primary"
             v-if="playstatus"
             @click="pause"
             class="el-icon-video-pause"
