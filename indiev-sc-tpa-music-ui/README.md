@@ -1,6 +1,6 @@
-# TPA_Demo
+# Indiev-sc-tpa-music-ui
 
-> 3rd party application demo
+> 3rd party music application demo
 
 ## Build Setup
 
