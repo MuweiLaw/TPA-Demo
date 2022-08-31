@@ -1,0 +1,7 @@
+server:
+  port: 8026
+#  servlet:
+#    context-path: /admin
+mybatis-plus:
+  #  configuration:
+  mapper-locations: classpath*:mapper/**/*.xml

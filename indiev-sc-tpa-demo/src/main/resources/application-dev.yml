@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://192.168.4.200:3306/tpa_dev?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+logging:
+  file:
+    path: /data/logs/tpa
+  level:
+    root: info
+logging.level:
+  com.indiev.sc.tpa: debug

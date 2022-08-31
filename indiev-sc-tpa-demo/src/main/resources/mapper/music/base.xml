@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.indiev.sc.tpa.mapper.SongBaseMapper">
+    <sql id="select_column">
+    ta.id
+    ,ta.song_id as songId
+    ,ta.song_name as songName
+    ,ta.image_url as imageUrl
+    ,ta.song_url as songUrl
+    ,ta.file_type as fileType
+    </sql>
+    <!--系统用户查询结果集-->
+    <resultMap id="songBaseResultMap" type="com.indiev.sc.tpa.domain.SongBasePojo">
+        <result property="id" column="id"/>
+        <result property="songId" column="songId"/>
+        <result property="songName" column="songName"/>
+        <result property="imageUrl" column="imageUrl"/>
+        <result property="songUrl" column="songUrl"/>
+        <result property="fileType" column="fileType"/>
+    </resultMap>
+    <!--查询列表-->
+    <select id="getPageAdminSysUser" parameterType="java.util.Map"
+            resultMap="songBaseResultMap">
+        select
+        <include refid="select_column"/>
+        FROM song_base ta
+        <where>
+            <!-- 自增ID -->
+            <if test="query.id != null ">
+                AND ta.id = #{query.id}
+            </if>
+            <!-- 歌曲ID -->
+            <if test="query.songId != null and query.songId != ''">
+                AND ta.song_id = #{query.songId}
+            </if>
+            <!-- 歌曲名称 -->
+            <if test="query.songName != null and query.songName != ''">
+                AND ta.song_name = #{query.songName}
+            </if>
+            <!-- 文件类型 -->
+            <if test="query.fileType != null and query.fileType != ''">
+                AND ta.file_type = #{query.fileType}
+            </if>
+            <!-- 备注 -->
+            <if test="query.remark != null and query.remark != ''">
+                AND ta.remark = #{query.remark}
+            </if>
+            <!-- 版本号 -->
+            <if test="query.version != null ">
+                AND ta.version = #{query.version}
+            </if>
+            <!-- 状态 {0:禁用,1:启用} -->
+            <if test="query.isEnable != null ">
+                AND ta.is_enable = #{query.isEnable}
+            </if>
+            <!-- 创建人 -->
+            <if test="query.createBy != null and query.createBy != ''">
+                AND ta.create_by = #{query.createBy}
+            </if>
+            <!-- 创建时间 -->
+            <if test="query.createTimeStart != null ">
+                <![CDATA[
+                        AND ta.create_time >= #{query.createTimeStart}
+                        ]]>
+            </if>
+            <if test="query.createTimeEnd != null ">
+                <![CDATA[
+                        AND ta.create_time <= #{query.createTimeEnd}
+                        ]]>
+            </if>
+            <!-- 修改人 -->
+            <if test="query.updateBy != null and query.updateBy != ''">
+                AND ta.update_by = #{query.updateBy}
+            </if>
+            <!-- 修改时间 -->
+            <if test="query.updateTimeStart != null ">
+                <![CDATA[
+                        AND ta.update_time >= #{query.updateTimeStart}
+                        ]]>
+            </if>
+            <if test="query.updateTimeEnd != null ">
+                <![CDATA[
+                        AND ta.update_time <= #{query.updateTimeEnd}
+                        ]]>
+            </if>
+
+            <if test="query.idList != null ">
+                <foreach collection="query.idList" item="item" open="AND ta.id IN(" separator="," close=")">
+                    #{item}
+                </foreach>
+            </if>
+        </where>
+
+    </select>
+
+
+
+</mapper>
+
